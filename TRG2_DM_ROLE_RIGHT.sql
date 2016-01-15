@@ -1,0 +1,25 @@
+--------------------------------------------------------
+--  DDL for Trigger TRG2_DM_ROLE_RIGHT
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRG2_DM_ROLE_RIGHT" 
+BEFORE INSERT OR UPDATE ON DM_ROLE_RIGHT FOR EACH ROW
+BEGIN
+  IF INSERTING
+  THEN
+    IF :new.ROLE_RIGHT_ID IS NULL OR :new.ROLE_RIGHT_ID = 0
+      THEN
+      SELECT SEQ_BASE.NEXTVAL
+      INTO :NEW.ROLE_RIGHT_ID
+      FROM DUAL;
+      END IF;
+      :new.CRD := SYSTIMESTAMP;      --LÉTREHOZÁS IDÕPONTJA 
+      :NEW.CRU := NVL(V('APP_USER'), USER); --APEX USER AKI LÉTREHOZZA A REKORDOT
+      ELSIF UPDATING
+      THEN
+      :new.MDD := SYSTIMESTAMP;      --MÓDOSÍTÁS IDÕPONTJA
+      :NEW.MDU := NVL(V('APP_USER'), USER); --APEX USER AKI MÓDOSÍT
+      END IF;
+      END TRG_DM_ROLE_RIGHT;
+/
+ALTER TRIGGER "TRG2_DM_ROLE_RIGHT" ENABLE;

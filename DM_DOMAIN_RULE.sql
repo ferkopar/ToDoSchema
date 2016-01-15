@@ -1,0 +1,20 @@
+--------------------------------------------------------
+--  DDL for Table DM_DOMAIN_RULE
+--------------------------------------------------------
+
+  CREATE TABLE "DM_DOMAIN_RULE" 
+   (	"DOMAIN_RULE_ID" NUMBER(12,0), 
+	"DOMAIN_ID" NUMBER(12,0), 
+	"RULE_TYPE_ID" NUMBER(12,0), 
+	"SUPER_GROUP_ID" NUMBER(12,0), 
+	"SUPER_GROUP_TREE" NUMBER(1,0), 
+	"TARGET_TABLE_NAME" VARCHAR2(50), 
+	"TARGET_COLUMN_NAME" VARCHAR2(50), 
+	"FROM_DATE" DATE, 
+	"TO_DATE" DATE, 
+	"DESCRIPTION" VARCHAR2(255), 
+	"CRU" VARCHAR2(30), 
+	"CRD" TIMESTAMP (6) DEFAULT SYSDATE, 
+	"MDU" VARCHAR2(30), 
+	"MDD" TIMESTAMP (6)
+   ) ;

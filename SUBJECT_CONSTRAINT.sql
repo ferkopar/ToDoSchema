@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  Constraints for Table SUBJECT
+--------------------------------------------------------
+
+  ALTER TABLE "SUBJECT" ADD CONSTRAINT "PK_SUBJECT" PRIMARY KEY ("SUBJ_ID") ENABLE;
+ 
+  ALTER TABLE "SUBJECT" MODIFY ("SUBJ_ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "SUBJECT" MODIFY ("FROM_DATE" NOT NULL ENABLE);
+ 
+  ALTER TABLE "SUBJECT" MODIFY ("TO_DATE" NOT NULL ENABLE);
+ 
+  ALTER TABLE "SUBJECT" MODIFY ("CRD" NOT NULL ENABLE);
+ 
+  ALTER TABLE "SUBJECT" MODIFY ("CRU" NOT NULL ENABLE);

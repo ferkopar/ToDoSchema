@@ -1,0 +1,25 @@
+--------------------------------------------------------
+--  DDL for Trigger TRG2_TREATM_PRU
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRG2_TREATM_PRU" 
+BEFORE INSERT OR UPDATE ON TREATM_PRU FOR EACH ROW
+BEGIN
+  IF INSERTING
+  THEN
+    IF :new.TREATM_PRU_ID IS NULL OR :new.TREATM_PRU_ID = 0
+      THEN
+      SELECT SEQ_BASE.NEXTVAL
+      INTO :NEW.TREATM_PRU_ID
+      FROM DUAL;
+      END IF;
+      :new.CRD := SYSTIMESTAMP;      --LÉTREHOZÁS IDÕPONTJA 
+      :NEW.CRU := NVL(V('APP_USER'), USER); --APEX USER AKI LÉTREHOZZA A REKORDOT
+      ELSIF UPDATING
+      THEN
+      :new.MDD := SYSTIMESTAMP;      --MÓDOSÍTÁS IDÕPONTJA
+      :NEW.MDU := NVL(V('APP_USER'), USER); --APEX USER AKI MÓDOSÍT
+      END IF;
+      END TRG_TREATM_PRU;
+/
+ALTER TRIGGER "TRG2_TREATM_PRU" ENABLE;

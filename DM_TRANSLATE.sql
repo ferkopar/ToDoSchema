@@ -1,0 +1,75 @@
+--------------------------------------------------------
+--  DDL for Table DM_TRANSLATE
+--------------------------------------------------------
+
+  CREATE TABLE "DM_TRANSLATE" 
+   (	"TRANSLATE_ID" NUMBER(12,0), 
+	"TEXT_ID" NUMBER(12,0), 
+	"DISPLAY_TYPE_ID" NUMBER(12,0) DEFAULT 1, 
+	"TBL_NAME" VARCHAR2(50) DEFAULT NULL, 
+	"TBL_COL_NAME" VARCHAR2(50) DEFAULT NULL, 
+	"TBL_PK_ID" NUMBER(12,0), 
+	"TBL_ROWS" NUMBER(12,0), 
+	"APEX_VARIABLE" VARCHAR2(255), 
+	"PARAM_TYPE1" VARCHAR2(255), 
+	"PARAM_VALUE1" VARCHAR2(255), 
+	"PARAM_TYPE2" VARCHAR2(255), 
+	"PARAM_VALUE2" VARCHAR2(255), 
+	"DESCRIPTION" VARCHAR2(255), 
+	"W_GROUP_NAME" VARCHAR2(255), 
+	"FROM_DATE" DATE, 
+	"TO_DATE" DATE, 
+	"CRU" VARCHAR2(30), 
+	"CRD" TIMESTAMP (6) DEFAULT SYSDATE, 
+	"MDU" VARCHAR2(30), 
+	"MDD" TIMESTAMP (6), 
+	"W_REFERENCE_CODE" VARCHAR2(255), 
+	"W_DISPLAY_TYPE" VARCHAR2(255), 
+	"W_APEX_VARIABLE" VARCHAR2(2000), 
+	"STATUS_ID" NUMBER(12,0) DEFAULT 3, 
+	"APEX_PAGE" NUMBER(10,0)
+   ) ;
+ 
+
+   COMMENT ON COLUMN "DM_TRANSLATE"."TRANSLATE_ID" IS 'Fordító tábla egyedi azonosítója';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."TEXT_ID" IS 'Szöveg egyedi azonosítója kapcsolódik a  Super_typehoz';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."DISPLAY_TYPE_ID" IS 'Mejelenítés típusa egyedi azonosítója';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."TBL_NAME" IS 'Tábla neve';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."TBL_COL_NAME" IS 'Tábla oszlopának a neve';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."TBL_PK_ID" IS 'Tábla egyedi azonosítója';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."TBL_ROWS" IS 'Tábla sora';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."APEX_VARIABLE" IS 'Apex változó';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."PARAM_TYPE1" IS 'Paraméter típusa';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."PARAM_VALUE1" IS 'Paraméter értéke';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."PARAM_TYPE2" IS 'Paraméter típusa';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."PARAM_VALUE2" IS 'Paraméter értéke';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."DESCRIPTION" IS 'Leírás';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."FROM_DATE" IS 'Érvényesség kezdõ idõpontja';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."TO_DATE" IS 'Érvényesség vége';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."CRU" IS 'Rekord Létrehozójának Azonosítója';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."CRD" IS 'Rekord Létrehozásának idõpecsétje';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."MDU" IS 'Rekord Módosítójának Azonosítója';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."MDD" IS 'Rekord Módosításának Idõpecsétje';
+ 
+   COMMENT ON COLUMN "DM_TRANSLATE"."W_APEX_VARIABLE" IS 'Apex változó értéke';
+ 
+   COMMENT ON TABLE "DM_TRANSLATE"  IS 'Nyelvi fordító tábla
+Code: DMTR';

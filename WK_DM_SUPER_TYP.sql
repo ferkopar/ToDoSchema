@@ -1,0 +1,25 @@
+--------------------------------------------------------
+--  DDL for Table WK_DM_SUPER_TYP
+--------------------------------------------------------
+
+  CREATE TABLE "WK_DM_SUPER_TYP" 
+   (	"SUPER_TYP_ID" NUMBER(*,0), 
+	"GROUP_ID" NUMBER(*,0), 
+	"GROUND_LEVEL_ID" NUMBER(*,0), 
+	"SUPER_TYPE_NAME" VARCHAR2(150), 
+	"SUPER_TYPE_SHORT_NAME" VARCHAR2(50), 
+	"SUPER_GROUP_NAME" VARCHAR2(100), 
+	"SLEVEL" NUMBER(*,0), 
+	"SOPTIONAL" VARCHAR2(50), 
+	"WK_CLASS_ID" VARCHAR2(255), 
+	"FROM_DATE" DATE, 
+	"TO_DATE" DATE, 
+	"DESCRIPTION" VARCHAR2(150), 
+	"USE_COMMENT" VARCHAR2(50), 
+	"CRU" VARCHAR2(50), 
+	"CRD" VARCHAR2(50), 
+	"MDU" VARCHAR2(50), 
+	"MDD" VARCHAR2(50), 
+	"DATA_OWNER_ID" NUMBER(*,0), 
+	"STATUS_ID" NUMBER(*,0)
+   ) ;

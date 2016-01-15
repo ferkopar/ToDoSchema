@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  Constraints for Table DM_CAT_USAGE
+--------------------------------------------------------
+
+  ALTER TABLE "DM_CAT_USAGE" ADD CONSTRAINT "PK_DM_CAT_USAGE" PRIMARY KEY ("CAT_USAGE_ID") ENABLE;
+ 
+  ALTER TABLE "DM_CAT_USAGE" MODIFY ("CAT_USAGE_ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "DM_CAT_USAGE" MODIFY ("TABLE_NAME" NOT NULL ENABLE);
+ 
+  ALTER TABLE "DM_CAT_USAGE" MODIFY ("TABLE_COLUMN" NOT NULL ENABLE);
+ 
+  ALTER TABLE "DM_CAT_USAGE" MODIFY ("STATUS_ID" NOT NULL ENABLE);

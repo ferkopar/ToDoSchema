@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  Constraints for Table DM_NAMES
+--------------------------------------------------------
+
+  ALTER TABLE "DM_NAMES" ADD CONSTRAINT "PK_DM_NAMES" PRIMARY KEY ("NAMES_ID") ENABLE;
+ 
+  ALTER TABLE "DM_NAMES" MODIFY ("STATUS_ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "DM_NAMES" MODIFY ("NAMES_ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "DM_NAMES" MODIFY ("PNAMES" NOT NULL ENABLE);
+ 
+  ALTER TABLE "DM_NAMES" ADD CONSTRAINT "UK_DMNA" UNIQUE ("PNAMES") ENABLE;

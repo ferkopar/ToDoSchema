@@ -1,0 +1,25 @@
+--------------------------------------------------------
+--  DDL for View V_EPI
+--------------------------------------------------------
+
+  CREATE OR REPLACE VIEW "V_EPI" ("EPI_ID", "EPI_NAME", "EPI_TYPE_ID", "T_EPI_TYPE_NAME", "T_STAT_TYPE_NAME", "EPI_VALUE", "EPI_UNIT_TYPE_ID", "ORDER_NO", "DESCRIPTION", "CLASS_TYPE", "CLASS_ID", "FROM_DATE", "TO_DATE", "CRU", "CRD", "MDU", "MDD") AS 
+  SELECT EPI_ID,
+    EPI_NAME,
+    EPI_TYPE_ID,
+    BASE_PKG.DM_TRANSLATE_F ('DM_SUPER_TYP' ,'TYPE_ID' ,EPI_TYPE_ID ,BASE_PKG.V_LANG_F ) T_EPI_TYPE_NAME,
+    --STAT_TYPE_ID,
+    BASE_PKG.DM_TRANSLATE_F ('DM_STATUS_TYP' ,'STAT_TYPE_ID' ,null ,BASE_PKG.V_LANG_F ) T_STAT_TYPE_NAME,
+    EPI_VALUE,
+    EPI_UNIT_TYPE_ID,
+    ORDER_NO,
+    DESCRIPTION,
+    CLASS_TYPE,
+    CLASS_ID,
+    FROM_DATE,
+    TO_DATE,
+    CRU,
+    CRD,
+    MDU,
+    MDD
+  FROM EPI
+  --WHERE BASE_PKG.RIGHTS_READ_ROW_F('EPI',EPI_ID,0)='Y';

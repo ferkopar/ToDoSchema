@@ -1,0 +1,25 @@
+--------------------------------------------------------
+--  DDL for Trigger TRG2_DM_TRANSLATE
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRG2_DM_TRANSLATE" 
+BEFORE INSERT OR UPDATE ON DM_TRANSLATE FOR EACH ROW
+BEGIN
+  IF INSERTING
+  THEN
+    IF :new.TRANSLATE_ID IS NULL OR :new.TRANSLATE_ID = 0
+      THEN
+      SELECT SEQ_BASE.NEXTVAL
+      INTO :NEW.TRANSLATE_ID
+      FROM DUAL;
+      END IF;
+      :new.CRD := SYSTIMESTAMP;      --LÉTREHOZÁS IDÕPONTJA 
+      :NEW.CRU := NVL(V('APP_USER'), USER); --APEX USER AKI LÉTREHOZZA A REKORDOT
+      ELSIF UPDATING
+      THEN
+      :new.MDD := SYSTIMESTAMP;      --MÓDOSÍTÁS IDÕPONTJA
+      :NEW.MDU := NVL(V('APP_USER'), USER); --APEX USER AKI MÓDOSÍT
+      END IF;
+      END TRG_DM_TRANSLATE;
+/
+ALTER TRIGGER "TRG2_DM_TRANSLATE" ENABLE;

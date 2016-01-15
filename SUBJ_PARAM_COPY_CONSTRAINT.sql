@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  Constraints for Table SUBJ_PARAM_COPY
+--------------------------------------------------------
+
+  ALTER TABLE "SUBJ_PARAM_COPY" ADD CONSTRAINT "PK_SUBJ_PARAM_COPY" PRIMARY KEY ("SUBJ_PARAM_ID") ENABLE;
+ 
+  ALTER TABLE "SUBJ_PARAM_COPY" MODIFY ("SUBJ_PARAM_ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "SUBJ_PARAM_COPY" MODIFY ("FROM_DATE" NOT NULL ENABLE);
+ 
+  ALTER TABLE "SUBJ_PARAM_COPY" MODIFY ("TO_DATE" NOT NULL ENABLE);

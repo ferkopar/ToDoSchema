@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  Constraints for Table INVENT
+--------------------------------------------------------
+
+  ALTER TABLE "INVENT" ADD CONSTRAINT "PK_EPI_INVENT" PRIMARY KEY ("INVENT_ID") ENABLE;
+ 
+  ALTER TABLE "INVENT" MODIFY ("INVENT_ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "INVENT" MODIFY ("SUBJ_ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "INVENT" MODIFY ("GIS_ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "INVENT" MODIFY ("INVENT_TYPE_ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "INVENT" MODIFY ("STATUS_ID" NOT NULL ENABLE);

@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  Constraints for Table TREATM_REL
+--------------------------------------------------------
+
+  ALTER TABLE "TREATM_REL" ADD CONSTRAINT "PK_TR_TR" PRIMARY KEY ("TREATM_REL_ID") ENABLE;
+ 
+  ALTER TABLE "TREATM_REL" MODIFY ("TREATM_REL_ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "TREATM_REL" MODIFY ("TREATM_ID1" NOT NULL ENABLE);
+ 
+  ALTER TABLE "TREATM_REL" MODIFY ("TREATM_ID2" NOT NULL ENABLE);
+ 
+  ALTER TABLE "TREATM_REL" MODIFY ("REL_TYPE_ID" NOT NULL ENABLE);
